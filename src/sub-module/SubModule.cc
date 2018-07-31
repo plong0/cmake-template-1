@@ -1,13 +1,27 @@
 #include "SubModule.h"
 
 SubModule::SubModule() {
-  std::cout << "[SubModule] Hi hi hi" << std::endl;
-  content = "Foo";
+  setContent("Foo");
 }
 SubModule::~SubModule() {
-  std::cout << "[SubModule] Bye bye bye" << std::endl;
 }
 
 void SubModule::doSomething() {
-  std::cout << "[SubModule] Doing something..." << std::endl;
+  std::cout << "[SubModule] Doing something ..." << std::endl;
+  if (hasContent()) {
+    std::cout << "[SubModule] has Content: '" << getContent() << "'" << std::endl;
+  }
+  else {
+    std::cout << "[SubModule] has No Content!" << std::endl;
+  } 
+}
+
+std::string SubModule::getContent() {
+  return this->content;
+}
+bool SubModule::hasContent() {
+  return (this->content != "");
+}
+void SubModule::setContent(std::string content) {
+  this->content = content;
 }

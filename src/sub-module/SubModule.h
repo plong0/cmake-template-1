@@ -10,6 +10,10 @@ class SubModule {
 
     void doSomething();
 
+    std::string getContent();
+    bool hasContent();
+    void setContent(std::string content);
+
     std::string content;
 };
 

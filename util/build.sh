@@ -6,6 +6,10 @@ CMAKE_FLAGS=""
 
 if [ "$1" == "--debug" ]; then
   CMAKE_FLAGS="$CMAKE_FLAGS -DCMAKE_BUILD_TYPE=Debug"
+
+elif [ "$1" == "--tests" ]; then
+  CMAKE_FLAGS="$CMAKE_FLAGS -DBUILD_TESTS=True"
+
 fi
 
 echo -e "\033[1;93;40mbuild.sh RUNNING\033[0m"
